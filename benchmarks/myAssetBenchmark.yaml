@@ -1,5 +1,0 @@
-test:
-    name: basic-contract-benchmark
-    description: A test benchmark
-    workers:
-    rounds:

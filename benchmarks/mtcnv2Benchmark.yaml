@@ -1,0 +1,18 @@
+test:
+    name: basic-contract-benchmark
+    description: test benchmark
+    workers:
+      number: 5
+    rounds:
+      - label: mint
+        description: Mint some coins
+        txNumber: 5000
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 75
+        workload:
+          module: workload/mint.js
+          arguments:
+            amount: 1000
+            contractId: basic
