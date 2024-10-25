@@ -4,15 +4,47 @@ test:
     workers:
       number: 5
     rounds:
-      - label: mint
+      - label: Mint
         description: Mint some coins
-        txNumber: 5000
+        txNumber: 1000
         rateControl:
           type: fixed-rate
           opts:
-            tps: 75
+            tps: 50
         workload:
           module: workload/mint.js
           arguments:
-            amount: 1000
             contractId: basic
+      - label: Transfer
+        description: Transfer some coins
+        txNumber: 1000
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 50
+        workload:
+          module: workload/transfer.js
+          arguments:
+            contractId: basic
+      - label: Balance
+        description: Get balance
+        txNumber: 1000
+        rateControl:
+          type: fixed-rate
+          opts:
+            tps: 50
+        workload:
+          module: workload/balance.js
+          arguments:
+            contractId: basic
+
+monitors:
+  resource:
+  - module: docker
+    options:
+      interval: 1
+      cpuUsageNormalization: true
+      containers:
+      - /peer0.org1.example.com
+      - /orderer.example.com
+      - /peer0.org2.example.com
