@@ -13,10 +13,10 @@ organizations:
   - mspid: Org1MSP
     identities:
       certificates:
-      - name: 'caliper'
+      - name: 'User1'
         clientPrivateKey:
-          path: '../hlf-mtcnv2/test-network/organizations/peerOrganizations/org1.example.com/users/caliper@org1.example.com/msp/keystore/priv_sk'
+          path: '../hlf-mtcnv2/test-network/organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/keystore/priv_sk'
         clientSignedCert:
-          path: '../hlf-mtcnv2/test-network/organizations/peerOrganizations/org1.example.com/users/caliper@org1.example.com/msp/signcerts/cert.pem'
+          path: '../hlf-mtcnv2/test-network/organizations/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp/signcerts/cert.pem'
     connectionProfile:
       path: '../hlf-mtcnv2/test-network/organizations/peerOrganizations/org1.example.com/connection-org1.yaml'
